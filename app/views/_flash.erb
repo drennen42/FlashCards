@@ -1,0 +1,11 @@
+<% if flash[:error] %>
+   <h2 class="incorrect" style="color:red;text-align:center;"><%= flash[:error] %></h2>
+   <div class="container" style="padding:0">
+      <img style="width:auto;max-width:600px;" src="http://th05.deviantart.net/fs70/PRE/i/2012/066/9/4/nelson_ha_ha_wallpaper_by_julyyb-d4s0yeh.png">
+   </div>
+ <% elsif flash[:notice] %>
+   <h2 class="correct" style="color:green;text-align:center;"><%= flash[:notice] %></h2>
+   <div class="container" style="padding:0;">
+    <img style="width:auto;" src="http://cdn.screenrant.com/wp-content/uploads/the-simpsons-renewed-season-24-25.jpg">
+   </div>
+ <% end %>

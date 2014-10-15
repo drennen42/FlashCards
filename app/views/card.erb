@@ -1,0 +1,25 @@
+ action  <div class="header">
+ <%= erb :'_header' %>
+</div>
+
+<div class="container">
+ <%= erb :'_flash' %>
+  <% if @card.deck_id == 2 %>
+    <body style="background-image:url('http://mdx.omnia.com.mx/media/fotos/20140721_los-simpson.jpg');background-size:100%;"></body>
+  <% elsif @card.deck_id == 1 %>
+    <img src="http://www.doctorwhotv.co.uk/wp-content/uploads/clara-capaldi-danny-series-8.jpg">
+    <% elsif @card.deck_id == 2 %>
+    <img src="http://zohararad.github.io/presentations/falling-in-love-with-ruby/presentation/images/ruby.png">
+  <% end %>
+
+  <h2 class="question"><%= @card.question %></h2>
+  <form action="/cards/<%= @card.id %>" method="post">
+    <ul>
+      <li><input type="checkbox" name="answer" value="<%= @answer1 %>"> <%= @answer1 %></li>
+      <li><input type="checkbox" name="answer" value="<%= @answer2 %>"> <%= @answer2 %></li>
+      <li><input type="checkbox" name="answer" value="<%= @answer3 %>"> <%= @answer3 %></li>
+      <li><input type="checkbox" name="answer" value="<%= @answer4 %>"> <%= @answer4 %></li>
+    </ul>
+    <button type="submit">Submit</button>
+  </form>
+</div>
